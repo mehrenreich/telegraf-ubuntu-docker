@@ -16,6 +16,7 @@ COPY entrypoint.sh /entrypoint.sh
 COPY mibs/*.txt /usr/share/snmp/mibs/
 
 RUN find /usr/share/snmp/mibs/SYNOLOGY* -exec  basename {} \; | tee -a /usr/share/snmp/miblist.txt
+RUN find /usr/share/snmp/mibs/UBNT* -exec  basename {} \; | tee -a /usr/share/snmp/miblist.txt
 
 EXPOSE 8125/udp
 EXPOSE 8092/udp
